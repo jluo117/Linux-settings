@@ -1,8 +1,18 @@
+set nocompatible              " be iMproved, required
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+call vundle#end()            " required
+filetype plugin indent on
+filetype plugin on
+
+
+
 syntax on
 set number
 filetype plugin on
 set spell spelllang=en_us
-
+set relativenumber
 set wildmode=longest,list,full
 set wildmenu
 
@@ -10,7 +20,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set smartindent
-
+set backspace=indent,eol,start
 au BufWinLeave * mkview
 
 set term=xterm-256color
@@ -30,4 +40,3 @@ fun! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
-
